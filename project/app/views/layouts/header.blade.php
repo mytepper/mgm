@@ -18,7 +18,7 @@
 
         <li class="dropdown menu-merge">
           <a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
-          	<span class="hidden-xs pl15">{{Auth::user()->m_name}}</span>
+          	<span class="hidden-xs pl15">{{Auth::user()->first_name}}</span>
             <span class="caret caret-tp hidden-xs"></span>
           </a>
           <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">

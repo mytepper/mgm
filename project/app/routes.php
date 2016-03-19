@@ -20,18 +20,18 @@ Route::get('/login', function(){
 
 
 #active menu
-HTML::macro('clever_link', function($route) 
+HTML::macro('clever_link', function($route)
 {
     if(Request::is($route . '/*') OR Request::is($route))
     {
         $active = "menu-open";
     }
-    
-    else 
+
+    else
     {
         $active = '';
     }
-     
+
     return $active;
 });
 ##
@@ -66,7 +66,7 @@ Route::group(array('before' => 'store'), function() {
 
 
 
-  
+
   //branch
   Route::get("store/branch", function(){
      $get = Branch::orderBy('id','desc')->paginate(10);
@@ -258,7 +258,7 @@ Route::group(array('before' => 'store'), function() {
 
   });
 
-  
+
     Route::get('store/user/get',function(){
        $data = user::orderBy('id','DESC')
                   ->get();
@@ -269,7 +269,7 @@ Route::group(array('before' => 'store'), function() {
 
   //-------------------------------------------------------------------------------------------///
 
- 
+
   //user
   Route::get("store/user", function(){
      $get = User::orderBy('id','desc')->paginate(10);
@@ -284,7 +284,7 @@ Route::group(array('before' => 'store'), function() {
       $rs = User::where('id',Auth::user()->id)->fisrt();
     return View::make("store/user/edit")->with('rs',$rs);
   });
-  
+
   Route::post('store/user/add', array('uses' => 'UserController@add'));
   Route::post('store/user/edit', array('uses' => 'UserController@edit'));
 
@@ -314,8 +314,10 @@ Route::group(array('before' => 'store'), function() {
   //------------------------------------------------------------------------------------------//
 
     Route::post('store/level/edit', array('uses' => 'LevelController@edit'));
-
-
+    Route::any('store/companies' ,array('uses' => 'CompaniesController@index'));
+    Route::post('store/companies/edit' ,array('uses' => 'CompaniesController@edit'));
+    Route::get('store/companies/destroy/{id}' ,array('uses' => 'CompaniesController@destroy'));
+	Route::post('store/companies/create' ,array('uses' => 'CompaniesController@create'));
 });
 
 ?>

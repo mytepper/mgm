@@ -3,7 +3,7 @@
 <head>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8">
-  <title>Chiang Rai Callring Login</title>
+  <title>Login</title>
   <meta name="keywords" content="" />
   <meta name="description" content="">
   <meta name="author" content="">
@@ -24,7 +24,7 @@
 
   <style type="text/css">
   label.error{
-    margin-top:10px; 
+    margin-top:10px;
     color:#C10D0D;
   }
   </style>
@@ -56,7 +56,7 @@
           <div class="row mb15 table-layout">
 
             <div class="col-xs-6 text-right va-b pr5">
-         
+
 
             </div>
 
@@ -64,7 +64,7 @@
 
           <div class="panel panel-info">
 
-          
+
             <!-- end .form-header section -->
 
             <form method="post" action="{{URL::to('login')}}">

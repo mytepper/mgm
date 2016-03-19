@@ -10,9 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" value="{{ csrf_token() }}">
 
-  <!-- Font CSS (Via CDN) -->
+  <!-- Font CSS (Via CDN) 
   <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
-
+-->
   <link rel="stylesheet" type="text/css" href="{{URL::to('assets/theme/assets/fonts/glyphicons-pro/glyphicons-pro.css')}}">
   <!-- Theme CSS -->
   <link rel="stylesheet" type="text/css" href="{{URL::to('assets/theme/assets/skin/default_skin/css/theme.css')}}">

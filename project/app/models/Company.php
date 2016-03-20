@@ -18,12 +18,14 @@ class Company extends Eloquent {
  * @return [type]       [description]
  */
     public  static function saveCompany($data) {
-	    	$param = array(
-	    			'name' => $data['name'],
-	    			'address' => $data['address']
-	    	);
+			$param = array();
+			foreach ($data as $key => $value) {
+				$param = $param + array($key => $value);
+			}
 	    	if($data['id']){
-				return self::where('id', $data['id'])
+				$id = $data['id'];
+				unset($data['id']);
+				return self::where('id', $id)
 					->update($param);
 	    	}else{
 	    		return self::insert($param);

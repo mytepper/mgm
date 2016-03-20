@@ -1,5 +1,5 @@
 @section("header")
-    <header class="navbar navbar-fixed-top navbar-shadow">
+    <header class="navbar navbar-fixed-top navbar-shadow bg-primary">
       <div class="navbar-branding">
         <a class="navbar-brand" href="{{URL::to('store/dashboard')}}">
           <b>Control panel</b>

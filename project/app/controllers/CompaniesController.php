@@ -69,7 +69,7 @@ class CompaniesController extends \BaseController {
 						return Redirect::to('store/companies');
 					}
 						Session::flash('message', $saved);
-						return Redirect::to('store/companies');
+						return Redirect::to('store/companies')->with('validateError');
 				} else {
 				Session::flash('message', $this->validate($data));
 				return Redirect::to('store/companies');

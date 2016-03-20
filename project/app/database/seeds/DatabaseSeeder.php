@@ -3,7 +3,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder {
- 
+
 /**
 * Run the database seeds.
 *
@@ -12,25 +12,23 @@ class DatabaseSeeder extends Seeder {
 public function run()
 {
 Model::unguard();
- 
+
 $this->call('UserTableSeeder');
 $this->command->info('User Table Seeded!');
 }
- 
+
 }
- 
+
 class UserTableSeeder extends Seeder {
 public function run()
 {
-DB::table('tb_users')->delete();
-DB::table('tb_users')->insert([
-'username' => 'admin',
+DB::table('users')->delete();
+DB::table('users')->insert([
 'email' => 'admin@admin.com',
 'password' => Hash::make('admin1234'),
-'m_title' => '',
-'m_name' => 'admin admin',
-'m_type' => '1',
-'m_active' => '1',
+'type' => '1',
+'invite_id' => '0',
+'level_id' => '0',
 'created_at' => date('Y-m-d H:i:s')
 ]);
 }

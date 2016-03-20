@@ -13,15 +13,6 @@
     </ol>
   </div>
 </header>
-
-<div class="row">
-  <div class="col-md-12">
-      @if ($alert = Session::get('message'))
-          {{ $alert }}
-      @endif
-  </div>
-</div>
-
 <!-- End: Topbar -->
 <!-- Begin: Content -->
 <section id="content" class="table-layout animated fadeIn">
@@ -35,7 +26,7 @@
     </div>
     <div class="panel-body">
       <div class="tab-content pn br-n">
-        <div id="tab2_1" class="tab-pane active">
+        <div class="tab-pane active">
           <div class="row">
             <div class="col-md-10">
             </div>
@@ -47,7 +38,7 @@
           <div class="row">
             <div class="col-md-12">
 
-                <table class="table table-condensed display" id='companies-data' align="left">
+                <table class="table table-condensed display" align="left">
                 <thead>
                   <tr>
                     <th>รหัส</th>
@@ -71,7 +62,7 @@
                       </td>
                       <td width="200">
                         <button class="btn btn-primary"><span class="glyphicons glyphicons-ok_2"></span>  Update </button>
-                        <a href="{{URL::to('store/companies/delete')}}/{{$value->id}}" class="btn btn-danger"><span class="glyphicons glyphicons-circle_remove"></span> Delete </a>
+                        <a href="{{URL::to('store/companies/destroy')}}/{{$value->id}}" class="btn btn-danger delete"><span class="glyphicons glyphicons-circle_remove"></span> Delete </a>
                       </td>
                     </tr>
                   </form>
@@ -87,7 +78,6 @@
       </div>
     </div>
   </div>
-
 </div>
 </section>
 <!-- End: Content -->

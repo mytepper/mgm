@@ -54,14 +54,17 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'db_mgm2016',
+			'database'  => 'db_mgmbroker',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
-		/*
+		/*Database:	farfamedbr_2016
+Host:	localhost
+Username:	farfamedbr_2016
+Password:	OJZZAq8Eh
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',

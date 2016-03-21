@@ -18,6 +18,7 @@ class Company extends Eloquent {
  * @return [type]       [description]
  */
     public  static function saveCompany($data) {
+			unset($data['_token']);
 			$param = array();
 			foreach ($data as $key => $value) {
 				$param = $param + array($key => $value);

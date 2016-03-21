@@ -23,7 +23,7 @@ class CompaniesController extends \BaseController {
  *
  * @return Response
  */
-	public function index()
+	public function getIndex()
 	{
 		$company = Company::getCompany();
 		return View::make('store/companies/index')->with('company', $company);
@@ -35,7 +35,7 @@ class CompaniesController extends \BaseController {
  *
  * @return Response
  */
-	public function create() {
+	public function postCreate() {
 		if (Request::isMethod('post')) {
 			$data = Input::all();
 			if($this->validate($data) === true) {
@@ -59,7 +59,7 @@ class CompaniesController extends \BaseController {
  * @param  int  $id
  * @return Response
  */
-	public function edit() {
+	public function postEdit() {
 		if (Request::isMethod('post')){
 			$data = Input::all();
 			if($this->validate($data) === true) {
@@ -84,7 +84,7 @@ class CompaniesController extends \BaseController {
  * @param  int  $id
  * @return Response
  */
-	public function destroy($id)
+	public function getDestroy($id)
 	{
 		$destroy = Company::deleteCompany($id);
 		if($destroy) {

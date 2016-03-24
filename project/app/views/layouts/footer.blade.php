@@ -3,7 +3,7 @@
       <script type="text/javascript">
       var Route = "{{URL::to('/')}}/";
       </script>
-	  <script src="{{URL::to('assets/theme/vendor/jquery/jquery-1.11.1.min.js')}}"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	  <script src="{{URL::to('assets/theme/vendor/jquery/jquery_ui/jquery-ui.min.js')}}"></script>
       <!-- Validate form -->
       <script type="text/javascript" src="{{URL::to('assets/script/jquery.validate.min.js')}}"></script>

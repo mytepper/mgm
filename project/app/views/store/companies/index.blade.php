@@ -82,6 +82,6 @@
 </section>
 <!-- End: Content -->
 <!-- START: PAGE MODAL -->
-@include('layouts/companies/modal_add');
+@include("layouts.companies.modal_add")
 <!-- END: PAGE MODAL -->
 @stop

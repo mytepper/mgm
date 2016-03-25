@@ -14,7 +14,10 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/libraries"
-		]
+		],
+		"files": [
+            "app/libraries/helpers.php"
+        ]
 	},
 	"scripts": {
 		"post-install-cmd": [

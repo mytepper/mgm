@@ -2,6 +2,8 @@
 class Company extends Eloquent {
 
     protected $table = 'companies';
+    protected $fillable = ['name', 'address']; 
+    public $timestamps = true;
 
 /**
 * getcompay
@@ -29,7 +31,7 @@ class Company extends Eloquent {
 				return self::where('id', $id)
 					->update($param);
 	    	}else{
-	    		return self::insert($param);
+	    		return self::create($param);
 	    	}
     }
 

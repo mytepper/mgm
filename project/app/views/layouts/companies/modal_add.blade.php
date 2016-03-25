@@ -11,7 +11,6 @@
 			    <?php echo Helper::text('ชื่อ', array('name' => 'name'));?>
           <?php echo Helper::text('', array('name' => 'id'), true);?>
           <?php echo Helper::textarea('ที่อยู่', array('name' => 'address'));?>
-          <?php echo Helper::select('select', array('name' => 'id'), false, array('1' => 'xxx', '2' => 'xxxx'), false);?>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

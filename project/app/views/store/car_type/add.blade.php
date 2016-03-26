@@ -33,23 +33,12 @@
               </div>
               <div class="panel-body">
 
-                <form role="form" method="post" action="{{URL::to('store/car_type/add')}}" class="form-horizontal" enctype="multipart/form-data">
-                  
-                   <div class="form-group">
-                    <label class="col-lg-3 control-label" for="inputStandard">ชื่อประเภทรถ</label>
-                    <div class="col-lg-8">
-                      <div class="">
-                        <input type="text" placeholder="" name="name" class="form-control" required>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                     <label for="textArea3" class="col-lg-3 control-label"></label>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                  </div>
-                </form>
+                {{ Form::open(array('url' => 'store/cartypes/create', 'class' => 'form-horizontal')) }}
+                  <?php echo Helper::textForm('', array('name' => 'id'), true);?>
+                  <?php echo Helper::textForm('ชื่อประเภทรถ', array('name' => 'name'));?>
+                  <?php echo Helper::buttomForm('save', 'submit'); ?>
+                {{ Form::close() }}
+                
               </div>
             </div>
         </div>

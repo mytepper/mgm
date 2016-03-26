@@ -8,7 +8,7 @@
         <a href="{{URL::to('dashboard')}}">Dashboard</a>
       </li>
       <li class="crumb-icon">
-        <a href="{{URL::to('store/car_type')}}">ประเภทรถ</a>
+        <a href="{{URL::to('store/cartypes')}}">ประเภทรถ</a>
       </li>
     </ol>
   </div>
@@ -16,9 +16,9 @@
 
 <div class="row">
   <div class="col-md-12">
-      @if ($alert = Session::get('success'))
+     <!--  @if ($alert = Session::get('success'))
           {{ $alert }}
-      @endif
+      @endif -->
   </div>
 </div>
 
@@ -41,7 +41,7 @@
             <div class="col-md-10">
             </div>
             <div class="col-md-2">
-              <a class="btn btn-lg btn-success btn-block" href="{{URL::to('store/car_type/add')}}"><i class="fa fa-plus"></i> เพิ่มข้อมูลประเภทรถ</a>
+              <a class="btn btn-lg btn-success btn-block" href="{{URL::to('store/cartypes/add')}}"><i class="fa fa-plus"></i> เพิ่มข้อมูลประเภทรถ</a>
             </div>
           </div>
           <hr>
@@ -56,22 +56,22 @@
                     <th></th>
                   </tr>
                 </thead>
-                @if($get)
+                @if($cartype)
                 <tbody>
-                @foreach ($get as $key => $value)
-                  <form action="{{URL::to('store/car_type/edit')}}" method="post">
+                @foreach ($cartype as $key => $value)
+                  {{ Form::open(array('url' => 'store/cartypes/edit')) }}
                     <tr>
                       <td>{{$value->id}}</td>
                       <td>
-                        <input type="text" name="name" value="{{$value->name}}" class="form-control">
-                        <input type="hidden" name="id" value="{{$value->id}}">
+                        {{ Form::hidden('id', $value->id, array('class'=>'form-control')) }}
+                        {{ Form::text('name', $value->name, array('class'=>'form-control')) }}
                       </td>
                       <td width="200">
-                        <button class="btn btn-primary"><span class="glyphicons glyphicons-ok_2"></span>  Update </button>
-                        <a href="{{URL::to('store/car_type/delete')}}/{{$value->id}}" class="btn btn-danger"><span class="glyphicons glyphicons-circle_remove"></span> Delete </a>
+                        <button type="submit" class="btn btn-primary"><span class="glyphicons glyphicons-ok_2"></span>  Update </button>
+                        <a href="{{URL::to('store/cartypes/destroy')}}/{{$value->id}}" class="btn btn-danger"><span class="glyphicons glyphicons-circle_remove"></span> Delete </a>
                       </td>
                     </tr>
-                  </form>
+                  {{ Form::close() }}
                 @endforeach
 
                 </tbody>
@@ -81,7 +81,7 @@
 
               
             </div>
-            <div class="col-md-12 col-sm-12 col-lg-12" align="center">{{$get->links()}}</div>
+            <div class="col-md-12 col-sm-12 col-lg-12" align="center">{{$cartype->links()}}</div>
           </div>
         </div>
       </div>

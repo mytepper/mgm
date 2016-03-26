@@ -37,7 +37,7 @@
         </li>
 
         <li>
-          <a href="{{URL::to('store/cars')}}">
+          <a href="{{URL::to('store/carbrands')}}">
             <span class="glyphicons glyphicons-file"></span>
             <span class="sidebar-title">ข้อมูลยี่ห้อรถ</span>
           </a>

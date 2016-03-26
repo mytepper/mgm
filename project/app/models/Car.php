@@ -1,10 +1,48 @@
 <?php
 class Carbrand extends Eloquent {
-	public $timestamps = false;
-    protected $table = 'tb_brand';
 
-    public static function get($id){
-    	return self::where('id',$id)->first();
+	protected $table = 'cars';
+    protected $fillable = ['name']; 
+    public $timestamps = true;
+
+	/**
+	* get cartype
+	*
+	* @return array
+	*/
+    public static function getCarbrand() {
+    	return self::orderBy('id', 'desc')->paginate(9);
+    }
+
+	/**
+	* [saveCompany description]
+	* @param  [type] $data [description]
+	* @return [type]       [description]
+	*/
+    public  static function saveCarbrand($data) {
+		unset($data['_token']);
+		$param = array();
+		foreach ($data as $key => $value) {
+			$param = $param + array($key => $value);
+		}
+    	if($data['id']){
+			$id = $data['id'];
+			unset($data['id']);
+			return self::where('id', $id)
+				->update($param);
+    	}else{
+    		return self::create($param);
+    	}
+    }
+
+	/**
+	* [deleteCompany description]
+	* @param  [type] $id [description]
+	* @return [type]     [description]
+	*/
+    public static function deleteCarbrand($id) {
+    	$delete = self::where('id', '=', $id)->delete();
+    	return $delete;
     }
 
 }

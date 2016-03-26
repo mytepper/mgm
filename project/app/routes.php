@@ -65,6 +65,7 @@ Route::group(array('before' => 'store'), function() {
     //Route::controller('store/levels', 'LevelsController');
   Route::controller('store/cartypes', 'CarsTypesController');
   Route::controller('store/caryears', 'CarsYearsController');
+  Route::controller('store/carbrands', 'CarsController');
 });
 
 ?>

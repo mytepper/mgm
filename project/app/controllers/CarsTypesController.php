@@ -2,7 +2,6 @@
 
 class CarsTypesController extends \BaseController {
 
-
 	/**
 	* [validate description]
 	* @param  [type] $data [description]
@@ -63,7 +62,6 @@ class CarsTypesController extends \BaseController {
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
 	 * @return Response
 	 */
 	public function postEdit()
@@ -85,25 +83,12 @@ class CarsTypesController extends \BaseController {
 		}
 	}
 
-
 	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+	* Remove the specified resource from storage.
+	*
+	* @param  int  $id
+	* @return Response
+	*/
 	public function getDestroy($id)
 	{
 		$destroy = Cartype::deleteCartype($id);

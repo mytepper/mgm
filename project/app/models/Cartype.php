@@ -5,7 +5,6 @@ class Cartype extends Eloquent {
     protected $fillable = ['name']; 
     public $timestamps = true;
 
-
 	/**
 	* get cartype
 	*
@@ -14,7 +13,6 @@ class Cartype extends Eloquent {
     public static function getCartype() {
     	return self::orderBy('id', 'desc')->paginate(9);
     }
-
 
 	/**
 	* [saveCompany description]

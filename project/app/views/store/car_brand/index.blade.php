@@ -42,7 +42,9 @@
                         <div class="col-md-9">
                         </div>
                         <div class="col-md-3">
-                            <a class="btn btn-lg btn-success btn-block" href="{{URL::to('store/carbrands/add')}}"><i class="fa fa-plus"></i> เพิ่มข้อมูลยี่ห้อรถ</a>
+                            <a class="btn btn-lg btn-success btn-block" href="{{ URL::to('store/carbrands/add') }}">
+                              <i class="fa fa-plus"></i> เพิ่มข้อมูลยี่ห้อรถ
+                            </a>
                         </div>
                     </div>
                     <hr>
@@ -70,7 +72,7 @@
                                               <button type="submit" class="btn btn-primary">
                                                 <span class="glyphicons glyphicons-ok_2"></span> Update 
                                               </button>
-                                              <a href="{{URL::to('store/carbrands/destroy')}}/{{$value->id}}" class="btn btn-danger">
+                                              <a href="{{ URL::to('store/carbrands/destroy') }}/{{ $value->id }}" class="btn btn-danger">
                                                 <span class="glyphicons glyphicons-circle_remove"></span> Delete 
                                               </a>
                                           </td>
@@ -81,7 +83,7 @@
                                 @endif
                             </table>
                         </div>
-                        <div class="col-md-12 col-sm-12 col-lg-12" align="center">{{$carbrand->links()}}</div>
+                        <div class="col-md-12 col-sm-12 col-lg-12" align="center">{{ $carbrand->links() }}</div>
                     </div>
                 </div>
             </div>

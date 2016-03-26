@@ -28,9 +28,9 @@
       <div class="tab-content pn br-n">
         <div class="tab-pane active">
           <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-9">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
               <a class="btn btn-lg btn-success btn-block" data-toggle="modal" data-target="#modaladd" data-whatever="@mdo"><i class="fa fa-plus"></i> เพิ่มข้อมูลบริษัทประกันภัย</a>
             </div>
           </div>

@@ -105,7 +105,56 @@ class Helper {
 		return $html;
     }
 
+    /**
+	* [password description]
+	* @param  [type] $text   [description]
+	* @param  [type] $array  [description]
+	* @param  [type] 		 [description]
+	* @return [type]         [description]
+	*/
+	public static function passwordForm($text, $array) {
+    	$attr = '';
+    	foreach ($array as $key => $value) {
+    		$attr .= $key. '=' .$value. ' ';
+    	}
+    	$html = '<div class="form-group">';
+    	$html .= '<label class="col-lg-3 control-label" for="inputStandard">'.$text.'</label>';
+    	$html .= '<div class="col-lg-8">';
+    	$html .= '<div class="">';
+    	$html .= '<input type="password" class="form-control" '.$attr.' required>';
+    	$html .= '</div></div></div>';
+		return $html;
+    }
 
+    /**
+	* [radio description]
+	* @param  [type] $text   [description]
+	* @param  [type] $array  [description]
+	* @param  [type] 		 [description]
+	* @return [type]         [description]
+	*/
+	public static function radioForm($text, $array) {
+    	$attr = '';
+    	foreach ($array as $key => $value) {
+    		$attr .= $key. '=' .$value. ' ';
+    	}
+    	$html = '<div class="form-group">';
+    	$html .= '<label class="col-lg-3 control-label" for="inputStandard">'.$text.'</label>';
+    	$html .= '<div class="col-lg-8">';
+    	$html .= '<label class="checkbox-inline">';
+    	$html .= '<input type="checkbox" value="option1"> 1';
+    	$html .= '</label';
+    	$html .= '</div></div>';
+		return $html;
+    }
+
+    /**
+	* [text description]
+	* @param  [type] $text   [description]
+	* @param  [type] $array  [description]
+	* @param  [type] 		 [description]
+	* @return [type]         [description]
+	*/
     public static function buttomForm($text, $type) {
     	$html = '<div class="form-group">';
     	$html .= '<label class="col-lg-3 control-label"></label>';
